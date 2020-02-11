@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from mainsite.views import homepage, showpost
+from django.conf.urls import include, url
 
 urlpatterns = [
+	url(r'^$', homepage),
+	url(r'^post/(\w+)$', showpost),
     path('admin/', admin.site.urls),
 ]
